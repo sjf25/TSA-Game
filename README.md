@@ -1,5 +1,5 @@
 # TSA-Game
 
 ## Compilation Instructions
-Compile the source with g++
+Using the terminal, compile the source with g++
 use **g++ -o tsaGame *.h *.cpp**
