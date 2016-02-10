@@ -1,1 +1,3 @@
 # TSA-Game
+
+Compilation Instructions
