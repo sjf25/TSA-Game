@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 
+#ifndef OBJECT_H
+#define OBJECT_H
 class Object
 {
 private:
@@ -24,3 +26,4 @@ public:
 	Object(double, double, double);
 	void draw();
 };
+#endif

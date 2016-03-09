@@ -1,20 +1,22 @@
-#include "Ship.h"
+#include "Projectile.h"
 
-Ship::Ship(std::string filePath, std::string modelName, double a, double b, double c, double sp, int id)
-	: Object(filePath, modelName, a, b, c)
-{
-	teamId = id;
-	speed = sp;
-}
-
-Ship::Ship(double a, double b, double c, double sp, int id)
+/*Projectile::Projectile(double a, double b, double c, double sp, double xRot, double yRot)
 	: Object(a, b, c)
 {
-	teamId = id;
 	speed = sp;
+	xRotation = xRot;
+	yRotation = yRot;
+}*/
+
+Projectile::Projectile(Ship ship, double sp)
+	: Object(ship.x, ship.y, ship.z)
+{
+	speed = sp;
+	xRotation = ship.xRotation;
+	yRotation = ship.yRotation;
 }
 
-void Ship::move(int milliSecs)
+void Projectile::move(int milliSecs)
 {
 	const double ratio = 3.14159/180.0;
 	//moveTemp += .2;
@@ -34,4 +36,19 @@ void Ship::move(int milliSecs)
 	double zSign = (yRotation < 90 && yRotation > -90) ? 1:-1;
 	z += zSign * sqrt(fabs(pow((milliSecs/1000.0) * speed, 2) - pow(deltaX, 2) - pow(deltaY, 2)));
 	//user.z += user.speed * (sin(user.yRotation * ratio) - cos(user.xRotation * ratio));
+}
+
+void Projectile::draw()
+{
+	glColor3f(1, 0, 0);
+	//drawCircle3f(-x, -y, -z, .1);
+	drawSphere(-x, -y, -z, .1);
+	/*for(double theta = 0; theta <= 180; theta += 10)
+	{
+		glPushMatrix();
+		glRotatef(theta, 0, 0, 1);
+		drawCircle3f(x, y, z, .1);
+		glPopMatrix();
+	}*/
+	glColor3f(1, 1, 1);
 }
