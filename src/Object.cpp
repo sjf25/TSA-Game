@@ -70,6 +70,8 @@ void Object::draw()
 {
 	glPushMatrix();
 	glTranslatef(x, y, z);
+	//glRotatef(xRotation, 1, 0, 0);
+	glRotatef(yRotation, 0, 1, 0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glBegin(GL_TRIANGLES);
 	for(int i = 0; i < vertexCoords.size(); i++)

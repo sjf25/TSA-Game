@@ -14,6 +14,8 @@ Ship::Ship(double a, double b, double c, double sp, int id)
 	speed = sp;
 }
 
+Ship::Ship() : Object(0, 0,0 ) {}
+
 void Ship::move(int milliSecs)
 {
 	const double ratio = 3.14159/180.0;

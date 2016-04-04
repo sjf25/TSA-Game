@@ -14,6 +14,8 @@ Projectile::Projectile(Ship ship, double sp)
 	speed = sp;
 	xRotation = ship.xRotation;
 	yRotation = ship.yRotation;
+	teamId = ship.teamId;
+	timeSinceCreation = SDL_GetTicks();
 }
 
 void Projectile::move(int milliSecs)
@@ -43,12 +45,5 @@ void Projectile::draw()
 	glColor3f(1, 0, 0);
 	//drawCircle3f(-x, -y, -z, .1);
 	drawSphere(-x, -y, -z, .1);
-	/*for(double theta = 0; theta <= 180; theta += 10)
-	{
-		glPushMatrix();
-		glRotatef(theta, 0, 0, 1);
-		drawCircle3f(x, y, z, .1);
-		glPopMatrix();
-	}*/
 	glColor3f(1, 1, 1);
 }

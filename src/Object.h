@@ -21,6 +21,8 @@ private:
 	void loadModel(std::string, std::string);
 public:
 	double x=0, y=0, z=0;
+	double xRotation = 0;
+	double yRotation = 0;
 	Object(std::string, std::string);
 	Object(std::string, std::string, double, double, double);
 	Object(double, double, double);

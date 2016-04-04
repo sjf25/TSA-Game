@@ -7,10 +7,9 @@ class Ship : public Object
 public:
 	int teamId;
 	double speed;
-	double xRotation = 0;
-	double yRotation = 0;
 	Ship(std::string, std::string, double, double, double, double, int);
 	Ship(double, double, double, double, int);
+	Ship();
 	void move(int);
 };
 #endif

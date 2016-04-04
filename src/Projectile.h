@@ -1,14 +1,15 @@
 #include "Object.h"
 #include "Ship.h"
 #include "utils.h"
+#include <SDL2/SDL.h>
 
 class Projectile : public Object
 {
 public:
+	int teamId;
 	double speed;
-	double xRotation = 0;
-	double yRotation = 0;
-	long timeSinceCreation = 0;
+	unsigned int timeSinceCreation = 0;
+	bool visible = true;
 	//Projectile(double, double, double, double, double, double);
 	Projectile(Ship, double);
 	void move(int);
